@@ -64,7 +64,52 @@
     text-transform: uppercase;
 }
 
-.message {
-    font-family: Inter;
-    background: url("src/assets/img/marble.jpg");
+.form{
+    background-image: url(../img/marble.jpg);
+}
+
+header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.breadcrumb li{
+    float:right;
+    padding:5px;
+    border-radius:50px;
+    position:relative;
+    margin-left:-50px;
+    margin-top:3px;
+    background: rgba(66, 7, 17, 0.77);
+    transition:all 0.2s ease-in-out;
+
+}
+.breadcrumb li a{
+
+    overflow:hidden;
+    border-radius:50px;
+    transition:all 0.2s ease-in-out;
+    text-decoration:none;
+    height:50px;
+    color:black;
+    background: #c5102f;
+    text-align:center;
+    display:block;
+    line-height:50px;
+    padding-left:52px;
+    padding-right:33.33px;
+
+}
+
+.breadcrumb li a:hover{
+    background: #ff0000;
+}
+.breadcrumb li a:hover .text{
+    display:inline-block;
+    opacity:1;
+}
+
+ul.breadcrumb {
+    margin: 0;
+    list-style: none;
 }
