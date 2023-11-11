@@ -3,11 +3,16 @@
 <head>
     <title>IT website</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="src/assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="navigation">
-        <span class="logo"><a href="index.html">IT WEBSITE</a></span>
+        <span class="logo"><a href="index.html"><img src="src/assets/img/Logo.svg"></a></span>
         <ul class="navigation-menu">
             <li><a href="#">Services</a></li>
             <li><a href="#">Media</a></li>
@@ -15,33 +20,37 @@
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Contacts</a></li>
         </ul>
-        <ul class="Phones">
-            <li><img src="src/assets/img/phoneIcon.svg" alt="Phone"></li>
-            <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
-            <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
-        </ul>
-        <ul class="Mail">
-            <li><img src="src/assets/img/mailIcon.svg" alt="Mail"></li>
-            <li><a href="mailto:itcompany@mail.com">itcompany@mail.com</a></li>
-        </ul>
+        <div class="contacts">
+            <ul class="phones">
+                <li><img src="src/assets/img/phoneIcon.svg" alt="Phone"></li>
+                <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
+                <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
+            </ul>
+            <ul class="mail">
+                <li><img src="src/assets/img/mailIcon.svg" alt="Mail"></li>
+                <li><a href="mailto:itcompany@mail.com">itcompany@mail.com</a></li>
+            </ul>
+        </div>
 </div>
 
-<hr>
-
-<div class="extra-info">
+<div class="information">
     <div class="main-info">
-        <h2>Development of mobile applications and web services of any complexity</h2>
+        <h2>Development of <span class="highlighting">mobile applications</span> and <span class="highlighting">web services</span> of any complexity</h2>
         <p>We create mobile applications for iOS, Android that transfer your business to mobile applications of your customers' devices</p>
     </div>
     <div class="application">
         <h3>Leave your contacts and we will call you back within 30 minutes</h3>
         <div class="application-form">
             <form>
-                <label>Phone number: </label>
-                <input class="input" type="text" name="phone-number">
+                <label>Phone number</label>
+
+                <img src="src/assets/img/kz.svg">
+                <input type="text" placeholder="+7 (111) 111-11-11">
+
                 <label>Full name: </label>
-                <input class="input" type="text" name="full-name">
-                <input class="button" type="submit" value="Get consultation"><br>
+
+                <input type="text" placeholder="Иван Иванов">
+                <input class="button" type="submit" value="Get consultation">
             </form>
         </div>
     </div>
@@ -282,10 +291,10 @@
 <div class="footer">
     <h2>IT WEBSITE</h2>
     <ul class="footer-images">
-        <li><img src="" alt="Contact nums">Contact nums</li>
-        <li><img src="" alt="Post">Post</li>
-        <li><img src="" alt="Address">Address</li>
-        <li><img src="" alt="Request">Leave a request</li>
+        <li><img src="src/assets/img/phoneFooter.svg" alt="Contact nums">Contact nums</li>
+        <li><img src="src/assets/img/mailFooter.svg" alt="Post">Post</li>
+        <li><img src="src/assets/img/placeFooter.svg" alt="Address">Address</li>
+        <li><img src="src/assets/img/documentFooter.svg" alt="Request">Leave a request</li>
     </ul>
     <ul class="footer-value">
         <li>+7 (778) 395 90 26</li>
@@ -294,7 +303,7 @@
         <li>Leave a request</li>
     </ul>
     <ul class="footer-end-label">
-        <li><img src="" alt="End img">We work throughout world</li>
+        <li><img src="/src/assets/img/world.svg" alt="world image">We work throughout world</li>
     </ul>
 </div>
 
