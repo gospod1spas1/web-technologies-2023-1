@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="src/assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="navigation">
-        <span class="logo"><a href="index.html"><img src="src/assets/img/Logo.svg"></a></span>
+        <span class="logo"><a href="index.html"><img src="src/assets/img/Logo.svg " alt="logo"></a></span>
         <ul class="navigation-menu">
             <li><a href="#">Services</a></li>
             <li><a href="#">Media</a></li>
@@ -42,14 +42,11 @@
         <h3>Leave your contacts and we will call you back within 30 minutes</h3>
         <div class="application-form">
             <form>
-                <label>Phone number</label>
+                <label>Phone number<input type="text" placeholder="+7 (111) 111-11-11"></label>
+                <img src="src/assets/img/kz.svg" alt="kz">
 
-                <img src="src/assets/img/kz.svg">
-                <input type="text" placeholder="+7 (111) 111-11-11">
+                <label>Full name<input type="text" placeholder="Иван Иванов"></label>
 
-                <label>Full name: </label>
-
-                <input type="text" placeholder="Иван Иванов">
                 <input class="button" type="submit" value="Get consultation">
             </form>
         </div>
@@ -119,7 +116,7 @@
             <li>Europharma</li>
         </ul>
 
-        <button class="view-button" type="info" value="View 100 more projects">View 100 more projects</button><br>
+        <button class="view-button" type="button" value="View 100 more projects">View 100 more projects</button><br>
     </div>
     <div class="project-content">
         <h2>I-teka</h2>
@@ -155,11 +152,10 @@
     <p>Let's figure out how to create an effective application, its cost and terms of its development</p>
     <div class="discuss-form">
         <form class="discuss-form">
-            <label>Best phone number: </label>
-            <img src="" alt="country">
-            <input class="input" type="text" name="phone-number">
-            <label>Full name: </label>
-            <input class="input" type="text" name="full-name">
+            <label>Best phone number: <input class="input" type="text" name="phone-number"></label>
+            <img src="src/assets/img/world.jpg" alt="country">
+
+            <label>Full name: <input class="input" type="text" name="full-name"></label>
             <input class="button" type="submit" value="Discuss the project"><br>
         </form>
     </div>
@@ -299,13 +295,13 @@
     <ul class="footer-value">
         <li>+7 (778) 395 90 26</li>
         <li>mail@mail.com</li>
-        <li>City city, street st. 90</li>
+        <li>City city, steet st. 90</li>
         <li>Leave a request</li>
     </ul>
     <ul class="footer-end-label">
-        <li><img src="/src/assets/img/world.svg" alt="world image">We work throughout world</li>
+        <li><img src="src/assets/img/world.jpg" alt="world image">We work throughout world</li>
     </ul>
 </div>
-
 </body>
+
 </html>

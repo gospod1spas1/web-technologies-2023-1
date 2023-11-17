@@ -94,10 +94,17 @@ ul.mail a{
     flex-shrink: 0;
     overflow: hidden;
 
-    background-image: url('src/assets/img/background.png');
+    background-image: url("../img/background.jpg");
+    background-position: right;
     background-repeat: no-repeat;
-    background-position: bottom right;
-    background-position-x: right;
+
+    /*background-image: url("../img/block1center.jpg"), url("../img/block2center.jpg"), url("../img/block1upper.jpg"),*/
+    /*url("../img/block2upper.jpg"), url("../img/block1lower.jpg"), url("../img/block2lower.jpg");*/
+    /*background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;*/
+    /*background-position: 670.73px 0px, right 30px, 620.73px 0px, 970px 0px, 913.73px 760px, bottom right;*/
+    /*background-position-x: right;*/
+    /*border-radius: 24px;*/
+    /*transform: rotate(-12deg);*/
 }
 
 .main-info {
@@ -261,7 +268,7 @@ p {
     line-height: 150%;
 }
 
-p3 {
+#p3 {
     width: 600px;
     color:  #101828;
     font-feature-settings: 'clig' off, 'liga' off;
