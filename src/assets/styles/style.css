@@ -129,32 +129,39 @@ ul.mail a{
     font-size: 20px;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.16), 0 0 2px 0 rgba(0, 0, 0, 0.08);
     border-radius: 12px;
-    width: 600px;
     left: 104px;
+    width: 676px;
     margin: 200px 0 0 0;
     position: relative;
-    padding: 35px 30px 0 35px;
-    display: inline-flex;
+    padding: 35px 30px 24px 36px;
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .application-form {
     display: inline-flex;
-    padding: 24px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    gap: 32px;
     color: #667085;
     font-family: Inter, sans-serif;
     font-size: 13px;
     font-weight: 500;
     line-height: 16px;
     letter-spacing: -0.15399999916553497px;
-    margin-bottom: 5px;
-    gap: 32px;
 }
 
-.application-form label {
+.application-form-contacts{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.application-form-contacts label {
     border-bottom:1px #D0D5DD;
     font-family: Inter, sans-serif;
     font-size: 13px;
@@ -165,38 +172,35 @@ ul.mail a{
     gap: 10px;
 }
 
-.application-form input {
-    box-sizing: border-box;
-    border-style: none;
+.application-form-contacts input{
+    width: 224px;
+    height: 54px;
+    font-family: "SF Pro Text", sans-serif;
     font-size: 17px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: -0.408px;
-    border-bottom: 1px solid #D0D5DD;
+    border: 0;
+    border-bottom: 0.7px solid #D0D5DD;
+    outline: none;
+    padding: 8px 0;
+    text-decoration: #101828;
 }
 
 .application h3{
     margin-top: 0;
 }
 
-.button {
-    float: right;
-    display: flex;
-    align-items: flex-start;
-    padding: 11px 24px;
-    gap: 8px;
-    border-radius: 8px;
-    background: #2D66EE;
-    color: #FFF;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter, sans-serif;
+.form-button {
+    background-color: #2D66EE;
+    color: #fff;
+    font-family: "SF Pro Text", sans-serif;
     font-size: 14px;
-    font-style: normal;
     font-weight: 600;
     line-height: 18px;
-    text-align: start;
     letter-spacing: -0.154px;
-    margin-bottom: 19px;
+    width: 132px;
+    border: 0;
+    border-radius: 8px;
+    text-align: left;
+    padding: 11px 24px;
 }
 
 .footer {
@@ -214,36 +218,43 @@ ul.mail a{
     margin: 0;
 }
 
-ul.footer-images {
+.footer-list{
+    display: flex;
+    justify-content: space-between;
     list-style-type: none;
-    align-items: flex-start;
-    display: inline-flex;
-    color: #98A2B3;
-    padding: 0 20px 0 20px;
-    gap: 250px;
-    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list h3{
+    margin: 0;
+    font-family: "SF Pro Text", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
-    letter-spacing: -0.15399999916553497px;
+    letter-spacing: -0.154px;
+    color: #aeaeae;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-ul.footer-value{
-    list-style-type: none;
+.footer-list li{
+    width: 294px;
+    text-align: left;
     display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    align-content: flex-start;
-    color: #FFF;
-    padding: 0 20px 0 50px;
-    gap: 210px;
-    font-style: normal;
-    font-family: SFProText, sans-serif;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-list p{
+    font-family: "SF Pro Text", sans-serif;
     font-size: 17px;
+    font-style: normal;
     font-weight: 600;
     line-height: 22px;
-    letter-spacing: -0.40799999237060547px;
-    text-align: left;
+    letter-spacing: -0.408px;
 }
 
 .footer-end-label{
@@ -252,6 +263,15 @@ ul.footer-value{
     display: flex;
     align-items: flex-start;
     gap: 2px;
+}
+
+.footer-end-label li{
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.078px;
 }
 
 a {
