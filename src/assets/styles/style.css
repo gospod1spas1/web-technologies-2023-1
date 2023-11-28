@@ -2,6 +2,15 @@
 @import "./fonts.css";
 @import "./utils.css";
 
+
+a.navigation-menu-portable{
+    display: none;
+}
+
+.navigation-menu-content{
+    display: none;
+}
+
 .body{
     width: 1440px;
 }
@@ -13,7 +22,7 @@
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     border-radius: 12px;
-    background: white;
+    background: #F2F4F7;
     padding: 16px 24px;
     align-items: center;
     gap: 80px;
@@ -36,7 +45,7 @@ span.highlighting {
     color: #306FF5;
 }
 
-.navigation-menu{
+.navigation-menu-desktop{
     font-family: SFProText, sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -45,7 +54,7 @@ span.highlighting {
     letter-spacing: -0.154px;
 }
 
-ul.navigation-menu{
+ul.navigation-menu-desktop{
     list-style-type: none;
     display: flex;
     align-items: flex-start;
@@ -53,7 +62,7 @@ ul.navigation-menu{
     color: black;
 }
 
-ul.navigation-menu a{
+ul.navigation-menu-desktop a{
     color: inherit;
     text-decoration: #101828;
 }

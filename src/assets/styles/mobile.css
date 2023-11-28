@@ -1,0 +1,60 @@
+@import "./style.css";
+
+@media screen and (max-width: 767px) {
+    .navigation-menu-desktop{
+        display: none;
+    }
+
+    ul.navigation-menu-desktop{
+        display: none;
+    }
+
+    .contacts{
+        display: none;
+        gap: initial;
+    }
+
+    .navigation-menu-content{
+        position: fixed;
+        display: block;
+        z-index: 1000;
+        left:0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #F2F4F7;
+    }
+
+    .navigation-menu-block-close{
+        width: 24px;
+        height: 24px;
+    }
+
+    .navigation-menu-block-close img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .navigation{
+        right: 8px;
+        left: 8px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin: 0 auto;
+        padding: 36px 16px;
+        border-radius: 12px;
+        top: 20px;
+        gap: initial;
+    }
+
+    span.logo{
+        position: absolute;
+        width: 116px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

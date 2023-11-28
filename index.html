@@ -6,14 +6,54 @@
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="src/assets/styles/style.css">
+    <link rel="stylesheet" media="screen and (width < 1024px)" href="src/assets/styles/tablet.css">
+    <link rel="stylesheet" media="screen and (width < 768px)" href="src/assets/styles/mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="navigation">
-        <span class="logo"><a href="index.html"><img src="src/assets/img/Logo.svg " alt="logo"></a></span>
-        <ul class="navigation-menu">
+    <a class="navigation-menu-portable" href="#">
+        <img src="src/assets/icons/Menu.svg" alt="menu">
+    </a>
+        <div class="navigation-menu-content">
+            <div class="navigation-menu-wrapper">
+                <div class="navigation-menu-block">
+                    <div class="navigation-menu-block-close">
+                        <img src="src/assets/icons/CloseIcon.svg" alt="logo">
+                    </div>
+                </div>
+                <div class="navigation-menu-wrapper-logo">
+                    <img src="src/assets/icons/Logo.svg " alt="logo">
+                </div>
+                <ul class="navigation-menu-wrapper-portable">
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Cases</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+                <div class="contacts-portable">
+                    <ul class="phones-portable">
+                        <li><img src="src/assets/icons/phoneIcon.svg" alt="Phone"></li>
+                        <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
+                        <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
+                    </ul>
+                    <ul class="mail-portable">
+                        <li><img src="src/assets/icons/mailIcon.svg" alt="Mail"></li>
+                        <li><a href="mailto:itcompany@mail.com">itcompany@mail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <span class="logo">
+        <a href="index.html">
+            <img src="src/assets/icons/Logo.svg " alt="logo">
+        </a>
+    </span>
+        <ul class="navigation-menu-desktop">
             <li><a href="#">Services</a></li>
             <li><a href="#">Media</a></li>
             <li><a href="#">Cases</a></li>
@@ -22,12 +62,12 @@
         </ul>
         <div class="contacts">
             <ul class="phones">
-                <li><img src="src/assets/img/phoneIcon.svg" alt="Phone"></li>
+                <li><img src="src/assets/icons/phoneIcon.svg" alt="Phone"></li>
                 <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
                 <li><a href="phone:+791111111111">+7 (111) 111 11 11</a></li>
             </ul>
             <ul class="mail">
-                <li><img src="src/assets/img/mailIcon.svg" alt="Mail"></li>
+                <li><img src="src/assets/icons/mailIcon.svg" alt="Mail"></li>
                 <li><a href="mailto:itcompany@mail.com">itcompany@mail.com</a></li>
             </ul>
         </div>
@@ -128,8 +168,8 @@
         </div>
         <div class="location-industry">
             <ul class="location-industry">
-                <li><img src="src/assets/img/Place.svg" alt="logo"> Kazakhstan</li>
-                <li><img src="src/assets/img/Work.svg" alt="logo"> Medicine</li>
+                <li><img src="src/assets/icons/Place.svg" alt="logo"> Kazakhstan</li>
+                <li><img src="src/assets/icons/Work.svg" alt="logo"> Medicine</li>
             </ul>
         </div>
         <div class="users">
@@ -141,8 +181,8 @@
             <span class="label">Active Users</span>
         </div>
         <div class="downloads">
-            <img src="src/assets/img/IOS.svg" alt="app-store">
-            <img src="src/assets/img/GooglePlay.svg" alt="google-play">
+            <img src="src/assets/icons/IOS.svg" alt="app-store">
+            <img src="src/assets/icons/GooglePlay.svg" alt="google-play">
         </div>
     </div>
 </div>
@@ -169,18 +209,18 @@
     <h2>Application Development Stages</h2>
     <ul class="stages-list-1">
         <ul class="stages-list-item">
-            <li><img src=""></li>
+            <li><img src="" alt=""></li>
             <li><a href="#">Analysis</a></li>
             <li><p>We write technical specifications for development, taking into account the business processes and technologies of the customer and the needs of users.</p></li>
-            <li class="background-image"><img src=""></li>
+            <li class="background-image"><img src="" alt=""></li>
         </ul>
         <ul class="stages-list-item">
-            <li><img src=""></li>
+            <li><img src="" alt=""></li>
             <li><a href="#">Design</a></li>
             <li class="background-image"><p>We adapt the customer's corporate identity to the platform guidelines. We draw convenient and understandable interfaces.</p></li>
         </ul>
         <ul class="stages-list-item">
-            <li><img src=""></li>
+            <li><img src="" alt=""></li>
             <li><a href="#">Development</a></li>
             <li class="background-image"><p>We create an extensible architecture, write clean and stable code. We integrate with customer technologies.</p></li>
         </ul>
@@ -188,18 +228,18 @@
 
     <ul class="stages-list-2">
         <ul class="stages-list-item">
-            <li><img src=""></li>
+            <li><img src="" alt=""></li>
             <li><a href="#">Testing</a></li>
             <li><p>We carry out functional testing and do bug fixes. We adapt the application to different phone resolutions</p></li>
             <li class="background-image"><img src=""></li>
         </ul>
         <ul class="stages-list-item">
-            <li><img src=""></li>
+            <li><img src="" alt=""></li>
             <li><a href="#">Launching</a></li>
             <li class="background-image"><p>We design the application page and publish it in the App Store and Google Play stores.</p></li>
         </ul>
         <ul class="stages-list-item">
-            <li><img src=""></li>
+            <li><img src="" alt=""></li>
             <li><a href="#">Support</a></li>
             <li class="background-image"><p>We monitor the stability of the application, update it for new devices and versions of iOS and Android.</p></li>
         </ul>
@@ -237,7 +277,7 @@
     <div class="book-application">
         <form class="book-application-form">
             <label>Phone number: </label>
-            <img class="country">
+            <img class="country" alt="">
             <input class="input" type="text" name="phone-number">
             <input class="input" type="text" name="full-name" value="Your full name">
             <label>email: </label>
@@ -246,7 +286,7 @@
         </form>
     </div>
     <div class="background-image">
-        <img src="">
+        <img src="" alt="">
     </div>
 </div>
 
@@ -291,28 +331,28 @@
     <ul class="footer-list">
         <li>
             <h3>
-                <img src="src/assets/img/phoneFooter.svg" alt="Contact nums">
+                <img src="src/assets/icons/phoneFooter.svg" alt="Contact nums">
                 Contact nums
             </h3>
             <p>+7 (778) 395 90 26</p>
         </li>
         <li>
             <h3>
-                <img src="src/assets/img/mailFooter.svg" alt="Post">
+                <img src="src/assets/icons/mailFooter.svg" alt="Post">
                 Post
             </h3>
             <p>mail@mail.com</p>
         </li>
         <li>
             <h3>
-                <img src="src/assets/img/placeFooter.svg" alt="Address">
+                <img src="src/assets/icons/placeFooter.svg" alt="Address">
                 Address
             </h3>
             <p>City city, steet st. 90</p>
         </li>
         <li>
             <h3>
-                <img src="src/assets/img/documentFooter.svg" alt="Request">
+                <img src="src/assets/icons/documentFooter.svg" alt="Request">
                 Leave a request
             </h3>
             <p>Leave a request</p>
