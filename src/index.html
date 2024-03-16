@@ -1,18 +1,237 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/assets/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/global.css">
+    <title>Pizza</title>
+
 </head>
+
 <body>
-<div class="test" style="color: blue">
-    test
+<div class="container">
+    <div class="left-column">
+        <div class="pizza-images">
+            <div class="pizza-item" onclick="selectPizza(new Margarita('Small'))">
+                <img src="assets/img/margarita.jpg" alt="Margarita">
+                <div class="pizza-caption">Маргарита</div>
+            </div>
+            <div class="pizza-item" onclick="selectPizza(new Pepperoni('Small'))">
+                <img src="assets/img/pepperoni.jpg" alt="Pepperoni">
+                <div class="pizza-caption">Пепперони</div>
+            </div>
+            <div class="pizza-item" onclick="selectPizza(new Bavarian('Small'))">
+                <img src="assets/img/bavarian.jpg" alt="Bavarian" style="width: 100%; height: 80%;">
+                <div class="pizza-caption">Баварская</div>
+            </div>
+        </div>
+    </div>
+    <div class="right-column">
+        <div>
+            <h2>Выбрать размер:</h2>
+
+            <div class="slider">
+                <label for="sizeSmall" id="sizeSmallLabel">Маленькая</label>
+                <input type="range" min="0" max="1" value="0" class="slider" id="sizeSliderInput"
+                       onchange="calculatePizza()">
+                <label for="sizeBig" id="sizeBigLabel">Большая</label>
+            </div>
+
+            <h2>Допинги к пицце:</h2>
+
+            <div class="topping-option">
+                <img src="assets/img/mozzarella.jpg" alt="CreamyMozzarella"
+                     onclick="toggleTopping(Toppings.CreamyMozzarella)" style="width: 100%; height: 200px;">
+                <p>Сливочная моцарелла</p>
+                <p><span id="toppingPriceCreamyMozzarella">+50₽</span></p>
+            </div>
+
+            <div class="topping-option">
+                <img src="assets/img/cheesecurb.png" alt="CheeseCurb"
+                     onclick="toggleTopping(Toppings.CheeseCurb)" style="width: 100%;">
+                <p>Сырный борт</p>
+                <p><span id="toppingPriceCheeseCurb">+150₽</span></p>
+            </div>
+
+            <div class="topping-option">
+                <img src="assets/img/cheddarandparmesan.jpg" alt="CheddarAndParmesan"
+                     onclick="toggleTopping(Toppings.CheddarAndParmesan)" style="width: 100%;">
+                <p>Чеддер и пармезан</p>
+                <p><span id="toppingPriceCheddarAndParmesan">+150₽</span></p>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<script src="lesson12.js"></script>
+<button id="addToCartButton">Добавить в корзину за <span id="buttonPrice"></span></button>
+
+<script>
+    const SizeOfPizza = { Big: 'Big', Small: 'Small' };
+    const Toppings = { CreamyMozzarella: 'CreamyMozzarella', CheeseCurb: 'CheeseCurb', CheddarAndParmesan: 'CheddarAndParmesan' }
+
+    class Pizza {
+        constructor(size) {
+            this.size = size;
+            this.toppings = [];
+            this.calculateBasePrice();
+            this.calculateBaseCalories();
+        }
+
+        addTopping(topping) {
+            const toppingOption = document.querySelector('.topping-option img[alt="' + topping + '"]').closest('.topping-option');
+            if (!this.toppings.includes(topping)) {
+                switch (topping) {
+                    case Toppings.CreamyMozzarella:
+                        this.price += (this.size === SizeOfPizza.Big) ? 100 : 50;
+                        this.calories += 20;
+                        break;
+                    case Toppings.CheeseCurb:
+                        this.price += (this.size === SizeOfPizza.Big) ? 300 : 150;
+                        this.calories += 50;
+                        break;
+                    case Toppings.CheddarAndParmesan:
+                        this.price += (this.size === SizeOfPizza.Big) ? 300 : 150;
+                        this.calories += 50;
+                        break;
+                    default:
+                        console.log("Такой добавки нет");
+                }
+                this.toppings.push(topping);
+                toppingOption.classList.add('selected');
+            } else {
+                this.removeTopping(topping);
+                toppingOption.classList.remove('selected');
+            }
+            this.calculatePizza();
+        }
+
+        removeTopping(topping) {
+            const index = this.toppings.indexOf(topping);
+            if (index !== -1) {
+                switch (topping) {
+                    case Toppings.CreamyMozzarella:
+                        this.price -= (this.size === SizeOfPizza.Big) ? 100 : 50;
+                        this.calories -= 20;
+                        break;
+                    case Toppings.CheeseCurb:
+                        this.price -= (this.size === SizeOfPizza.Big) ? 300 : 150;
+                        this.calories -= 50;
+                        break;
+                    case Toppings.CheddarAndParmesan:
+                        this.price -= (this.size === SizeOfPizza.Big) ? 300 : 150;
+                        this.calories -= 50;
+                        break;
+                }
+                this.toppings.splice(index, 1);
+            }
+        }
+
+        calculateBasePrice() {
+            this.price = (this.size === SizeOfPizza.Big) ? 200 : 100;
+        }
+
+        calculateBaseCalories() {
+            this.calories = (this.size === SizeOfPizza.Big) ? 200 : 100;
+        }
+
+        calculatePizza() {
+            document.getElementById('buttonPrice').textContent = `${this.getPrice()} руб., (${this.getCalories()} кКал)`;
+        }
+
+        getSize = () => this.size
+        getKind = () => this.constructor.name;
+        getPrice = () => this.price;
+        getCalories = () => this.calories;
+
+        getToppings() {
+            console.log("Toppings:");
+            this.toppings.forEach(topping => {
+                console.log("- " + topping);
+            });
+        }
+    }
+
+
+    class Margarita extends Pizza {
+
+        constructor(size) {
+            super(size);
+            this.price += 500
+            this.calories += 300
+        }
+    }
+
+    class Pepperoni extends Pizza {
+
+        constructor(size) {
+            super(size);
+            this.price += 800
+            this.calories += 400
+        }
+    }
+
+    class Bavarian extends Pizza {
+
+        constructor(size) {
+            super(size);
+            this.price += 700
+            this.calories += 450
+
+        }
+    }
+
+    let selectedPizza = null;
+
+    function selectPizza(pizza) {
+        selectedPizza = pizza;
+        document.querySelectorAll('.pizza-item').forEach(item => item.style.border = '');
+        document.querySelectorAll('.topping-option').forEach(item => item.classList.remove('selected'));
+        document.querySelector('.pizza-item img[alt="' + pizza.getKind() + '"]').parentNode.style.border = '2px solid black';
+        calculatePizza();
+    }
+
+    function toggleTopping(topping) {
+        if (selectedPizza !== null) {
+            selectedPizza.addTopping(topping);
+        }
+    }
+
+    function calculatePizza() {
+        const selectedSize = document.getElementById('sizeSliderInput').value === '0' ? SizeOfPizza.Small : SizeOfPizza.Big;
+        if (selectedPizza !== null) {
+            if (selectedSize !== selectedPizza.getSize()) {
+                selectedPizza.toppings = [];
+                document.querySelectorAll('.topping-option').forEach(item => item.classList.remove('selected'));
+            }
+            selectedPizza = new selectedPizza.constructor(selectedSize);
+            recalculateToppingPrices(selectedSize);
+            document.getElementById('buttonPrice').textContent = `${selectedPizza.getPrice()} руб., (${selectedPizza.getCalories()} ККал)`;
+        }
+    }
+
+    function recalculateToppingPrices(size) {
+        const toppingPrices = {
+            [Toppings.CreamyMozzarella]: { Small: 50, Big: 100 },
+            [Toppings.CheeseCurb]: { Small: 150, Big: 300 },
+            [Toppings.CheddarAndParmesan]: { Small: 150, Big: 300 }
+        };
+
+        Object.keys(toppingPrices).forEach(topping => {
+            const toppingElement = document.getElementById(`toppingPrice${topping}`);
+            if (toppingElement) {
+                const price = toppingPrices[topping][size];
+                toppingElement.textContent = `+${price}₽`;
+            }
+        });
+    }
+
+    document.getElementById('sizeSliderInput').addEventListener('change', () => {
+        calculatePizza();
+        recalculateToppingPrices(document.getElementById('sizeSliderInput').value === '0' ? SizeOfPizza.Small : SizeOfPizza.Big);
+    });
+</script>
 </body>
+
 </html>
