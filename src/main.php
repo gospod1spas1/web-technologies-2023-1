@@ -149,7 +149,7 @@ echo("<hr>")
 <p>Текущий год (1-й способ): <?php echo date('Y'); ?></p>
 <?php
 $currYear = date('Y');
-$content = file_get_contents('site.html');
+$content = file_get_contents('index.html');
 $content = str_replace('{{ year }}', $currYear, $content);
 echo $content;
 ?>
